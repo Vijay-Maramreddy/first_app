@@ -19,7 +19,7 @@ class GradientContainer extends StatelessWidget{
           ),
         ),
         child:const Center(
-          child:StyleText(),
+          child:StyleText("hello World!, welcome to flutter"),
         )
 
     );
