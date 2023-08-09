@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'dart:math';
 import 'package:first_app/gradient_container.dart';
 
 class DiceRoller extends StatefulWidget {
@@ -14,11 +14,12 @@ class DiceRoller extends StatefulWidget {
 
 class _DiceRollerState extends State<DiceRoller> {
 
-  var activeDiceImage = 'assets/images/dice-5.png';
+  var currentDiceRoll=2;
 
   void rollDice() {
+
     setState(() {
-      activeDiceImage = 'assets/images/dice-6.png';
+      currentDiceRoll=Random().nextInt(6)+1;
     });
 
   }
@@ -28,7 +29,7 @@ class _DiceRollerState extends State<DiceRoller> {
     return Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset(activeDiceImage, width: 200,),
+          Image.asset('assets/images/dice-$currentDiceRoll.png', width: 200,),
           const SizedBox(height: 20),
           TextButton(
             onPressed: rollDice,
